@@ -1,0 +1,16 @@
+#my-style-input {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  outline: none;
+  z-index: 1000000;
+  padding: 10px 20px;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 1px solid #ccc;
+  background: #fcfcfc;
+  overflow: auto;
+  font: 13px "Inconsolata", "Consolas", "Menlo", "Monaco", "Lucida Console", "Courier New", "Courier", monospace;
+}

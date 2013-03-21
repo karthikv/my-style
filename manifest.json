@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "My Style",
+  "description": "Set your own styles for websites you visit.",
+  "version": "0.1",
+
+  "content_scripts": [{
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["my-style.css"],
+      "js": ["my-style.js"],
+      "run_at": "document_end"
+  }]
+}
