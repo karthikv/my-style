@@ -6,8 +6,9 @@ visits.
 ## Usage
 Take TechCrunch, for example. You may dislike the site's design and want to add
 your own touch--that is, your own style--to make it aesthetically pleasing.
-After installing the extension, hit command + control + m in your browser. You
-should see a textarea to the right:
+After installing the extension, visit [TechCrunch](http://techcrunch.com) and
+hit command + control + m in your browser. You should see a textarea to the
+right:
 
 ![Techcrunch textarea](https://raw.github.com/karthikv/my-style/master/screenshots/techcrunch-textarea.png)
 
