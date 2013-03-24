@@ -23,6 +23,11 @@
     style.innerHTML = localStorage.myStyle || '';
     textarea.value = style.innerHTML;
 
+    // default help message
+    if (textarea.value === '') {
+      textarea.value = '/* Enter your styles here. */';
+    }
+
     // continually update styles with textarea content
     textarea.addEventListener('keyup', function(event) {
       style.innerHTML = textarea.value;

@@ -8,7 +8,7 @@
   height: 100%;
 
   /* Should be visible above all other elements. */
-  z-index: 1000000;
+  z-index: 5000000;
   overflow: auto;
   outline: none;
   padding: 10px 20px;
