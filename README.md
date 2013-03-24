@@ -49,7 +49,7 @@ a better option to retain CSS.
 ## License
 (The MIT License)
 
-Copyright (c) 2012 Karthik Viswanathan &lt;me@karthikv.net&gt;
+Copyright (c) 2013 Karthik Viswanathan &lt;me@karthikv.net&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
