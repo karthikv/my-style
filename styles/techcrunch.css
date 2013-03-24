@@ -1,0 +1,95 @@
+body {
+  background: #f6f6f6;
+  color: #333;
+  font-size: 30px;
+}
+
+a,
+a:visited,
+#paging-below a {
+  color: #00a67c;
+}
+
+a:hover,
+.module-post .headline a:hover {
+  color: #008463;
+}
+
+.post {
+  box-shadow: 0px 5px 6px -5px #bbb;
+  overflow: hidden;
+}
+
+.publication-info {
+  margin-top: 20px !important;
+}
+
+.publication-info .by-line {
+  display: inline;
+}
+
+.publication-info .post-time {
+  display: inline;
+}
+
+.publication-info,
+.publication-info .by-line {
+  color: #999;
+  text-transform: uppercase;
+}
+
+#paging-above,
+#paging-below {
+  font-size: 12px;
+}
+
+#paging-below .page-next {
+  background: none;
+  background-position: 100% -39px;
+}
+
+#paging-below {
+  width: 638px;
+  margin-top: 20px;
+}
+
+#paging-below,
+#paging-below .page-prev.noprev {
+  background: none;
+}
+
+#module-header,
+.right-container,
+.top-featured-posts,
+.lazy-share-widget,
+.module-sponsored-ads,
+.module-footer,
+.post-share-widget,
+.post-category-name,
+.widget,
+iframe {
+  display: none !important;
+}
+
+.column-container {
+  width: 668px;
+  margin: 50px 0;
+}
+
+.module-post .body-copy,
+.module-post .entry-summary,
+.module-post-detail,
+.module-post-detail .body-copy p {
+  font: 15px/1.5 Roboto, "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+}
+
+.module-post .headline,
+.module-post-detail .headline,
+.module-post .headline a,
+.module-post-detail .headline a {
+  font-family: "Raleway", "PT Sans", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, Sans_Serif;
+  line-height: 1.15;
+  font-weight: normal;
+  letter-spacing: 0px;
+  margin-left: 0;
+}
