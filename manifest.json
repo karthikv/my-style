@@ -9,6 +9,6 @@
       "matches": ["http://*/*", "https://*/*"],
       "css": ["my-style.css"],
       "js": ["my-style.js"],
-      "run_at": "document_end"
+      "run_at": "document_start"
   }]
 }
