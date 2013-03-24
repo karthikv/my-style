@@ -6,9 +6,9 @@
   "version": "0.1",
 
   "content_scripts": [{
-      "matches": ["http://*/*", "https://*/*"],
-      "css": ["my-style.css"],
-      "js": ["my-style.js"],
-      "run_at": "document_start"
+    "matches": ["http://*/*", "https://*/*"],
+    "css": ["my-style.css"],
+    "js": ["my-style.js"],
+    "run_at": "document_start"
   }]
 }
