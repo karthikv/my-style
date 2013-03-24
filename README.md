@@ -16,7 +16,7 @@ Insert your custom CSS and see results:
 ![Techcrunch restyled](https://raw.github.com/karthikv/my-style/master/screenshots/techcrunch-restyled.png)
 
 (Note: if you'd like this specific Techcrunch skin, it's available at
-[styles/techcrunch.css](https://github.com/karthikv/my-style/blob/master/styles/techcrunch.css))
+[styles/techcrunch.css](https://github.com/karthikv/my-style/blob/master/styles/techcrunch.css).)
 
 This CSS will be reinserted upon revisiting Techcrunch, thereby saving your
 styles. Pressing command + control + m once more will hide the textarea, but
@@ -34,7 +34,7 @@ persistent form of storage (e.g. the JavaScript FileSystem APIs) would be
 a better option to retain CSS.
 
 ## Contributors
-### Karthik Viswanathan - nodefront core developer
+### Karthik Viswanathan
 - GitHub: [@karthikv](https://github.com/karthikv)
 - Twitter: [@karthikvnet](https://twitter.com/karthikvnet)
 - Website: [http://karthikv.net](http://karthikv.net)
