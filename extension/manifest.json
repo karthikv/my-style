@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "My Style",
-  "description": "Set your own styles for websites you visit.",
+  "description": "Insert custom CSS into pages, immediately see the visual results, and have that CSS persist for future visits.",
   "version": "0.1",
 
   "content_scripts": [{
