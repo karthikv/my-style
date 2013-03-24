@@ -6,6 +6,9 @@
   var SOFT_TAB = '    ';
   var SOFT_TAB_LENGTH = SOFT_TAB.length;
 
+  var ONLY_WHITESPACE_REGEX = /^\s*$/;
+  var WHITESPACE_SPLIT_REGEX = /\s+$/g;
+
   /* Throttle the given function, condensing multiple calls into one call after
    * the given timeout period. In other words, allow at most one call to go
    * through per timeout period. Returns the throttled function.
@@ -32,6 +35,11 @@
     };
   }
 
+  /* Remove whitespace on the edges of this string. */
+  String.prototype.trim = function() {
+    return this.replace(/(^\s+|\s+$)/g, '');
+  };
+
   window.addEventListener('DOMContentLoaded', function(event) {
     var head = document.getElementsByTagName('head')[0];
     var body = document.body;
@@ -42,18 +50,83 @@
     // hide textarea by default
     textarea.style.display = 'none';
     textarea.id = 'my-style-input';
+    textarea.spellcheck = false;
 
     head.appendChild(style);
     body.appendChild(textarea);
 
     style.innerHTML = localStorage.myStyle || '';
     textarea.value = style.innerHTML;
+    textarea.placeholder = '/* Enter your styles here. */';
 
-    // default help message
-    if (textarea.value === '') {
-      textarea.value = '/* Enter your styles here. */';
-    }
+    // alt + click on an element adds its selector to the textarea
+    body.addEventListener('click', function(event) {
+      // ensure textarea is actually displayed
+      if (textarea.style.display.indexOf('none') === -1 &&
+          event.target.id !== textarea.id && event.altKey) {
+        var i = 0;
+        var target = event.target;
+        var elemClass = target.className.split(' ') || '';
+        var stylesList = [];
+        var existingStyles = '';
+        var selector = '';
+        var cssStatement;
+        var textToAdd;
 
+        // selector starts with the tag
+        selector += target.tagName.toLowerCase();
+
+        // include ID if there is one
+        if (target.id) {
+          selector += '#' + target.id;
+        }
+
+        // include all classes found
+        for (i = 0; i < elemClass.length; i++) {
+          if (!ONLY_WHITESPACE_REGEX.test(elemClass[i])) {
+            selector += '.' + elemClass[i];
+          }
+        }
+
+        // fill CSS with styles defined in the style attribute
+        if (target.getAttribute('style')) {
+          stylesList = target.getAttribute('style').split(';');
+        
+          // keep track of CSS properties already defined in style attribute
+          for (i = 0; i < stylesList.length; i++) {
+            // condense mutliple whitespace into one space
+            cssStatement = stylesList[i].split(WHITESPACE_SPLIT_REGEX)
+              .join(' ').trim();
+
+            if (!ONLY_WHITESPACE_REGEX.test(cssStatement)) {
+              existingStyles += SOFT_TAB + cssStatement.toLowerCase() + ";\n";
+            }
+          }
+        }
+        
+        // construct text to add to textarea
+        if (selector) {
+          // add existing styles in braces
+          if (existingStyles) {
+            existingStyles = "{\n" + existingStyles + "}";
+          } else {
+            existingStyles = "{\n\n}";
+          }
+
+          textToAdd = '\n' + selector + ' ' + existingStyles;
+          textarea.value += textToAdd;
+
+          // highlight added text for easy removal
+          textarea.focus();
+          textarea.setSelectionRange(textarea.value.length - textToAdd.length,
+            textarea.value.length);
+        }
+
+        event.preventDefault();
+      }
+    });
+
+    /* Updates styles with content in textarea. */
     var updateStyle = throttle(function() {
       style.innerHTML = textarea.value;
       localStorage.myStyle = style.innerHTML;
