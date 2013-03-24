@@ -54,8 +54,8 @@
     });
 
     window.addEventListener('keydown', function(event) {
-      // command + control + m toggles text area
-      if (event.metaKey && event.ctrlKey && event.keyCode === M_KEY_CODE) {
+      // control + m toggles text area
+      if (event.ctrlKey && event.keyCode === M_KEY_CODE) {
         if (textarea.style.display == 'none') {
           textarea.style.display = 'block';
         } else {
