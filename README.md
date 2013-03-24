@@ -1,6 +1,7 @@
 # My Style
-My Style is a Google Chrome extension that allows you to insert custom CSS into
-pages, immediately see the visual results, and have that CSS persist for future
+[My Style](https://chrome.google.com/webstore/detail/my-style/ljdhjpmbnkbengahefamnhmegbdifhlb)
+is a Google Chrome extension that allows you to insert custom CSS into pages,
+immediately see the visual results, and have that CSS persist for future
 visits.
 
 ## Usage
@@ -22,6 +23,11 @@ Insert your custom CSS and see results:
 This CSS will be reinserted upon revisiting Techcrunch, thereby saving your
 styles. Pressing command + control + m once more will hide the textarea, but
 your contents will still be retained.
+
+## Installation
+You may install My Style at the
+[Chrome Web Store](https://chrome.google.com/webstore/detail/my-style/ljdhjpmbnkbengahefamnhmegbdifhlb).
+Just click the 'Add to Chrome' button.
 
 ## How it Works
 My Style is quite simple. It inserts a textarea into the page, looks for
