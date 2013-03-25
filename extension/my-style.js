@@ -6,6 +6,32 @@
   var SOFT_TAB = '    ';
   var SOFT_TAB_LENGTH = SOFT_TAB.length;
 
+  /* Throttle the given function, condensing multiple calls into one call after
+   * the given timeout period. In other words, allow at most one call to go
+   * through per timeout period. Returns the throttled function.
+   *
+   * Arguments:
+   * fn -- the function to throttle
+   * timeout -- the timeout to throttle for
+   */
+  function throttle(fn, timeout) {
+    return function throttledFn() {
+      if (!throttledFn.timer) {
+        // keep track of the arguments to the function and the context
+        var args = arguments;
+        var that = this;
+
+        // call the function after the provided timeout
+        throttledFn.timer = setTimeout(function() {
+          fn.apply(that, args);
+
+          // finished calling the function; unset the timer
+          throttledFn.timer = undefined;
+        }, timeout);
+      }
+    };
+  }
+
   window.addEventListener('DOMContentLoaded', function(event) {
     var head = document.getElementsByTagName('head')[0];
     var body = document.body;
@@ -28,11 +54,14 @@
       textarea.value = '/* Enter your styles here. */';
     }
 
-    // continually update styles with textarea content
-    textarea.addEventListener('keyup', function(event) {
+    var updateStyle = throttle(function() {
       style.innerHTML = textarea.value;
       localStorage.myStyle = style.innerHTML;
-    });
+    }, 500);
+
+    // continually update styles with textarea content
+    textarea.addEventListener('keyup', updateStyle);
+    textarea.addEventListener('change', updateStyle);
 
     // pressing tab should insert spaces instead of focusing another element
     textarea.addEventListener('keydown', function(event) {
