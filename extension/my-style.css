@@ -23,4 +23,8 @@
   background: #fcfcfc;
   font: 13px "Inconsolata", "Consolas", "Menlo", "Monaco",
     "Lucida Console", "Courier New", "Courier", monospace;
+	
+  /* Maintain left-to-right direction even on right-to-left websites. */
+  direction: ltr;
+  text-align: left;
 }
