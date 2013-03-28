@@ -1,30 +1,31 @@
-/* Textarea for custom styles. */
+/* Textarea for custom styles. Make all styles !important to prevent
+ * site's stylesheet from overriding. */
 #my-style-input {
   /* Position on right side, taking up entire browser height. */
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100%;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 300px !important;
+  height: 100% !important;
 
   /* Should be visible above all other elements. */
-  z-index: 5000000;
-  overflow: auto;
-  outline: none;
-  padding: 10px 20px;
+  z-index: 5000000 !important;
+  overflow: auto !important;
+  outline: none !important;
+  padding: 10px 20px !important;
 
-  border-top: 0;
-  border-bottom: 0;
-  border-right: 0;
-  border-left: 1px solid #ccc;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  border-right: 0 !important;
+  border-left: 1px solid #ccc !important;
 
   /* Dark code font with light background. */
-  color: #222;
-  background: #fcfcfc;
+  color: #222 !important;
+  background: #fcfcfc !important;
   font: 13px "Inconsolata", "Consolas", "Menlo", "Monaco",
-    "Lucida Console", "Courier New", "Courier", monospace;
+    "Lucida Console", "Courier New", "Courier", monospace !important;
 	
   /* Maintain left-to-right direction even on right-to-left websites. */
-  direction: ltr;
-  text-align: left;
+  direction: ltr !important;
+  text-align: left !important;
 }
