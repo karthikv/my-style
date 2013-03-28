@@ -126,15 +126,20 @@
       }
     });
 
-    /* Updates styles with content in textarea. */
-    var updateStyle = throttle(function() {
-      style.innerHTML = textarea.value;
+    /* Save styles persistently in local storage. */
+    var saveStyles = throttle(function() {
       localStorage.myStyle = style.innerHTML;
     }, 500);
 
+    /* Updates styles with content in textarea and saves styles. */
+    function updateAndSaveStyles() {
+      style.innerHTML = textarea.value;
+      saveStyles();
+    }
+
     // continually update styles with textarea content
-    textarea.addEventListener('keyup', updateStyle);
-    textarea.addEventListener('change', updateStyle);
+    textarea.addEventListener('keyup', updateAndSaveStyles);
+    textarea.addEventListener('change', updateAndSaveStyles);
 
     // pressing tab should insert spaces instead of focusing another element
     textarea.addEventListener('keydown', function(event) {
