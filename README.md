@@ -23,6 +23,11 @@ This CSS will be reinserted upon revisiting Techcrunch, thereby saving your
 styles. Pressing control + m once more will hide the textarea, but your
 contents will still be retained.
 
+To speed up the process of styling, if you hold alt while clicking an element,
+a selector for that element will automatically be appended to the textarea
+editor. With this, you can circumvent the time it takes to inspect the element
+to find how to target it.
+
 ## Installation
 You may install My Style at the
 [Chrome Web Store](https://chrome.google.com/webstore/detail/my-style/ljdhjpmbnkbengahefamnhmegbdifhlb).
