@@ -33,7 +33,7 @@ You may install My Style at the
 [Chrome Web Store](https://chrome.google.com/webstore/detail/my-style/ljdhjpmbnkbengahefamnhmegbdifhlb).
 Just click the 'Add to Chrome' button.
 
-## How it Works
+## How it works
 My Style is quite simple. It inserts a textarea into the page, looks for
 changes to the textarea's contents, and updates a dynamically inserted style
 tag appropriately. My Style employs local storage to make CSS changes
@@ -50,6 +50,10 @@ a better option to retain CSS.
 - Twitter: [@karthikvnet](https://twitter.com/karthikvnet)
 - Website: [http://karthikv.net](http://karthikv.net)
 - Email: me@karthikv.net
+
+## Safari extension
+If you use Safari, consider downloading Luke Hagan's Safari port of My Style.
+It can be found at [lhagan/my-style](https://github.com/lhagan/my-style).
 
 ## License
 (The MIT License)
